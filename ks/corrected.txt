@@ -1,0 +1,118 @@
+/*
+Author: XXXXX
+Date: 
+
+Handles string manipulation - 4 operations
+
+*/
+
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+
+#define MAX_STRING_VALUE 100
+
+char str_inputString [MAX_STRING_VALUE]; 	//declaration of global variable
+
+/*********************************************
+
+Var: void
+Return type: void
+
+find frequency of characters
+
+*******************************************////
+void calcCharacterfreq(void)	
+{
+char ch;
+int i,frequency=0;
+printf("\n Enter a character\t");
+scanf(" %c",&ch);
+for (count=1; str[i]!='\0'; i++)
+  {
+	if(ch==str[i])
+		++frequency;
+  }
+printf("\n The frequency of %c=%d",ch,frequency);
+}
+void palindrome()      // function to check for palindrome
+{
+char cpy[100];
+strcpy(str,cpy);
+strrev(str);
+if(strcmp(str,cpy)==0)
+  {
+	printf("\n The given string is a palindrome");
+  }
+else
+  {
+	printf("\n The given string is not a palindrome");
+  }
+}
+void sortAlphaOrder ()	       //function to arrange a string in alphabetical order
+{
+char ch1,output[100];
+int no[26]={0},n,c,t,x;
+n=strlen (str);
+for(c=0;c<n;c++)
+  {
+	ch1=str[c]-'a';
+	no[ch1]++;
+  }
+t=0;
+for(ch1='a';ch1<='z';ch1++)
+  {
+	x=ch1-'a';
+		for(c=0;c<no[x];c++)
+		  {
+			output[t]=ch1;
+			t++;
+		  }
+  }
+  output[t]='\0';
+  printf("\n The arrangement of string in alphabetical order is %s",output);
+}
+void reverse(char *str1)		
+//Function to reverse the string
+{
+	
+	do {
+		if (*str == null)
+		break;
+
+		reverse(str1+1);
+		printf("\nThe reversed string is %c\n",*str1);
+           
+	} while (1)
+
+}
+void main()
+{
+int n_choice;
+clrscr();
+printf("\n Enter the string");
+scanf("%s",str);
+	printf("\n The choices are \n1.frequency");
+	printf("\n2.Palindrome");
+	printf("\n3.Arrange the string in alphabetical order");
+	printf("\n4.Reverse using recursion");
+printf("\n Enter the choice");
+scanf("%d",&choice);
+switch(choice)
+  {
+	case 1: printf("\n 1.Frequency");
+		frequency();
+		break;
+	case 2: printf("\n 2.Palindrome");
+		palindrome();
+		break;
+	case 3: printf("\n 3. Arrangement");
+		arrange();
+		break;
+	case 4: printf("\n 4.Reverse");
+		reverse(str);
+		break;
+	default: printf("\n Wrong choice");
+  }
+getch();
+}
